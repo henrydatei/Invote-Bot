@@ -8,4 +8,4 @@ Ich habe den Bot für OSX geschrieben, er sollte eigentlich aber auch auf Linux 
 
 Hat man `hxselect` kompiliert, so muss man es nach `~/bin` kopieren (oder einfach das Skript anpassen).
 
-Das Skript erwartet als erstes Argument die Umfrage-ID. Wenn die Umfrage unter https://tud.invote.de/36492 erreichbar ist, dann ist 88915 die Umfrage-ID, und das Skript kann dann im Terminal mit  `sh invote_bot.sh 36492` gestartet werden.
+Das Skript erwartet als erstes Argument die Umfrage-ID. Wenn die Umfrage unter https://tud.invote.de/36492 erreichbar ist, dann ist 36492 die Umfrage-ID, und das Skript kann dann im Terminal mit  `sh invote_bot.sh 36492` gestartet werden.
