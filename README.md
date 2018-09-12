@@ -1,5 +1,5 @@
 # Invote-Bot
-ein Bot für das Invote-System der TU Dresden (http://tud.invote.de)
+ein Bot für das Invote-System der TU Dresden (https://tud.invote.de)
 
 Dieser Bot kann automatisch beliebig viele Antworten an eine Invote-Umfrage schicken. Das ist ist in der Regel ziemlich lustig, wenn es so aussieht, als wenn der ganze Hörsaal keine Ahnung von der richtigen Antwort hat und der Professor deswegen ziemlich verzweifelt.
 
