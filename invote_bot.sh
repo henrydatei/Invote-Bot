@@ -32,7 +32,6 @@ done
 clear
 
 echo "================================= Invote - Bot ================================="
-echo "written by: Henry Haustein"
 echo "version: 2.0"
 echo ""
 echo "Umfrage-ID: $umfrageid, Link: $link"
