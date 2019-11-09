@@ -61,3 +61,5 @@ done
 # nicht mehr benötigte Dateien löschen
 rm antworten.txt
 rm seite.txt
+
+# evtl. Parallelisierung mit parallel: seq 1000 | parallel 'curl --data "antwort=352295" --data "antwortort+senden" https://tud.invote.de/78722 -H "Cookie: invoteSession={};invote={}" -s -o /dev/null'
