@@ -26,7 +26,7 @@ declare -a values
 for (( i = 1; i <= $anzahl; i++ )); do
   antwortbuchstabe[$i]=$(cat antworten.txt | head -n $i | tail -n 1 | ~/bin/hxselect -c strong)
   values[$i]=$(cat antworten.txt | head -n $i | tail -n 1 | grep "antwort" | awk -F"\"" '{print $6}')
-  antwortArray[$i]=$(cat antworten.txt | head -n $i | tail -n 1 | ~/bin/hxselect -c label | cut -d " " -f2)
+  antwortArray[$i]=$(cat antworten.txt | head -n $i | tail -n 1 | ~/bin/hxselect -c label | cut -c 20-)
 done
 
 clear
