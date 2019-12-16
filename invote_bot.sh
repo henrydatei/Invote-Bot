@@ -7,12 +7,12 @@ start=$(echo $RANDOM)
 
 # Seite abspeichern
 link=$(echo "https://tud.invote.de/$umfrageid")
-curl $link >> seite.txt
+curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15" $link >> seite.txt
 
 # wichtige Elemente der Seite aus dem HTML-Quelltext ausschneiden mit hxselect
 ueberschrift=$(cat seite.txt | ~/bin/hxselect -s "\n" h2 | head -n 1 | ~/bin/hxselect -c h2)
 frage=$(cat seite.txt | ~/bin/hxselect -s "\n" -c p.mc | ~/bin/hxselect -c strong | head -n 2 | tail -n 1 | sed -e 's/^[[:space:]]*//')
-curl $link | ~/bin/hxselect -s "\n" -c p.antwort.mc >> antworten.txt
+curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15" $link | ~/bin/hxselect -s "\n" -c p.antwort.mc >> antworten.txt
 
 # Anzahl der Antworten bestimmen
 anzahl=$(cat antworten.txt | wc -l | tr -d '[:space:]')
@@ -54,7 +54,7 @@ echo "Es wird für ${antwortbuchstabe[$spamZahl]}: ${antwort[$spamZahl]} $spamAn
 
 # Antworten erstellen und abschicken
 for (( i = $start; i < $start+$spamAnzahl; i++ )); do
-  curl --data "antwort=$antwort" --data "antwortort+senden" https://tud.invote.de/$umfrageid -H "Cookie: invoteSession=$i;invote=$i" -s -o /dev/null
+  curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15" --data "antwort=$antwort" --data "antwortort+senden" https://tud.invote.de/$umfrageid -H "Cookie: invoteSession=$i;invote=$i" -s -o /dev/null
   echo "Fake-Antwort Nummer $(($i-$start+1)) abgegeben."
 done
 
